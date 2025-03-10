@@ -1,0 +1,34 @@
+# Node.js dependencies
+node_modules/
+package-lock.json
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Build files
+dist/
+build/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+.orra-data/
+.orra-service-key.json
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Data
+monolith-app/data.json
+stage1-architecture/data.json
+stage2-compensation/data.json
+stage3-grounding/data.json
+stage4-observability/data.json
