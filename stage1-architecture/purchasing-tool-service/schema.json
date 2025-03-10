@@ -1,0 +1,84 @@
+{
+	"input": {
+		"type": "object",
+		"properties": {
+			"userId": {
+				"type": "string"
+			},
+			"productId": {
+				"type": "string"
+			},
+			"deliveryEstimate": {
+				"type": "object",
+				"properties": {
+					"deliveryDate": {
+						"type": "string"
+					},
+					"estimatedDay": {
+						"type": "number"
+					}
+				}
+			}
+		},
+		"required": [
+			"userId",
+			"productId",
+			"deliveryEstimate"
+		]
+	},
+	"output": {
+		"type": "object",
+		"properties": {
+			"order": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"userId": {
+						"type": "string"
+					},
+					"productId": {
+						"type": "string"
+					},
+					"productName": {
+						"type": "string"
+					},
+					"price": {
+						"type": "number"
+					},
+					"transactionId": {
+						"type": "string"
+					},
+					"status": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"deliveryEstimate": {
+						"type": "object",
+						"properties": {
+							"deliveryDate": {
+								"type": "string"
+							},
+							"estimatedDay": {
+								"type": "number"
+							}
+						}
+					}
+				}
+			},
+			"status": {
+				"type": "string"
+			},
+			"success": {
+				"type": "boolean"
+			}
+		},
+		"required": [
+			"order",
+			"success"
+		]
+	}
+}
