@@ -1,0 +1,19 @@
+{
+  "name": "product-advisor",
+  "version": "1.0.0",
+  "description": "LLM-powered product advisor agent for the marketplace assistant",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Team orra",
+  "license": "MIT",
+  "dependencies": {
+    "@orra.dev/sdk": "^0.2.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "openai": "^4.11.0",
+    "lowdb": "^7.0.1"
+  }
+}
