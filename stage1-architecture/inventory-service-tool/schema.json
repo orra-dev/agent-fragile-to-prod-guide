@@ -1,0 +1,38 @@
+{
+  "input": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "productId": {
+        "type": "string"
+      }
+    },
+    "required": ["action", "productId"]
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string"
+      },
+      "productId": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "success": {
+        "type": "boolean"
+      },
+      "inStock": {
+        "type": "number"
+      },
+      "message": {
+        "type": "string"
+      }
+    },
+    "required": ["action", "productId"]
+  }
+}
