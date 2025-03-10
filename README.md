@@ -38,9 +38,8 @@ Each component demonstrates Orra's capabilities:
 
 - **Product Advisor Agent**: LLM-powered recommendation engine
 - **Inventory Service**: Simulated inventory database with holds and releases
-- **Payment Service**: Simulated payment processor with occasional failures
 - **Delivery Agent**: Estimates delivery times based on various factors
-- **Notification Service**: Sends various customer notifications
+- **Purchasing Service**: A product purchasing that creates orders, makes payments with occasional failures and notifies users
 
 ## Getting Started
 
