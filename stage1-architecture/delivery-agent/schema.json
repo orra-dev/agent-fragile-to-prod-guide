@@ -1,0 +1,35 @@
+{
+  "input": {
+    "type": "object",
+    "properties": {
+      "userId": {
+        "type": "string"
+      },
+      "productId": {
+        "type": "string"
+      }
+    },
+    "required": ["userId", "productId"]
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "success": {
+        "type": "boolean"
+      },
+      "state": {
+        "type": "string"
+      },
+      "estimatedDurationHours": {
+        "type": "number"
+      },
+      "estimatedDeliveryDate": {
+        "type": "string"
+      },
+      "explanation": {
+        "type": "string"
+      }
+    },
+    "required": ["estimatedDurationHours", "estimatedDeliveryDate", "explanation"]
+  }
+}
