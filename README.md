@@ -8,6 +8,9 @@ We'll build a marketplace assistant that helps users find, purchase, and arrange
 
 ## Workshop Progression: 3 Stages to Production Readiness
 
+### Stage 0: Monolith Agent
+- A marketplace agent found in [here](monolith-app)
+
 ### Stage 1: Multi-Agent Architecture
 - Build a distributed system with specialized agents and services
 - Integrate with orra for orchestration
