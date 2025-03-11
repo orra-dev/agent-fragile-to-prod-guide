@@ -89,7 +89,7 @@ async function reserveProduct(productId, quantity = 1) {
 	};
 }
 
-async function releaseProduct(productId, quantity = 1) {
+export async function releaseProduct(productId, quantity = 1) {
 	const product = db.data.products.find(p => p.id === productId);
 	
 	if (!product) {

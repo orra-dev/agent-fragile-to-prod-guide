@@ -2,7 +2,7 @@ import express from 'express';
 import { initService } from '@orra.dev/sdk';
 import dotenv from 'dotenv';
 import schema from './schema.json' assert { type: 'json' };
-import { execInventory } from "./svc.js";
+import { execInventory, releaseProduct } from "./svc.js";
 
 dotenv.config();
 
@@ -31,7 +31,21 @@ async function startService() {
     await inventoryService.register({
       description: `A service that manages product inventory, checks availability and reserves products.
 Supported actions: checkAvailability (gets product status), reserveProduct (reduces inventory), and releaseProduct (returns inventory).`,
-      schema
+      schema,
+      revertible: true // Enable compensations
+    });
+    
+    // Register compensation handler
+    inventoryService.onRevert(async (task, result) => {
+      // Only process compensations for reserveProduct actions
+      if (task.input.action === 'reserveProduct' && result.success) {
+        console.log('Reverting inventory product for task:', task.id);
+        console.log('Reverting inventory product hold for product:', result.productId);
+
+        // Compensation logic: release the product that was reserved
+        const releaseResult = releaseProduct(result.productId, 1);
+        console.log('Inventory compensation completed:', JSON.stringify(releaseResult));
+      }
     });
     
     // Start handling tasks
