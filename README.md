@@ -6,7 +6,7 @@ This workshop demonstrates how to transform a fragile AI-powered Marketplace Ass
 
 We'll build a marketplace assistant that helps users find, purchase, and arrange delivery for products. Throughout the workshop, we'll progressively improve the application by addressing common production challenges in multi-agent AI systems.
 
-## Workshop Progression: 4 Stages to Production Readiness
+## Workshop Progression: 3 Stages to Production Readiness
 
 ### Stage 1: Multi-Agent Architecture
 - Build a distributed system with specialized agents and services
@@ -25,12 +25,6 @@ We'll build a marketplace assistant that helps users find, purchase, and arrange
 - Map capabilities to actual services
 - Validate execution plans through PDDL
 - Prevent hallucinated plans and invalid actions
-
-### Stage 4: Observability & Enhanced Error Handling
-- Add detailed monitoring for system operations
-- Implement graceful degradation for component failures
-- Create resilient execution patterns
-- Enable troubleshooting through enhanced visibility
 
 ## Workshop Components
 
