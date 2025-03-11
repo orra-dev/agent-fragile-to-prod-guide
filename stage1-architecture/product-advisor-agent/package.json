@@ -1,7 +1,7 @@
 {
   "name": "product-advisor",
   "version": "1.0.0",
-  "description": "LLM-powered product advisor agent for the marketplace assistant",
+  "description": "Product advisor agent for the marketplace assistant",
   "main": "index.js",
   "type": "module",
   "scripts": {

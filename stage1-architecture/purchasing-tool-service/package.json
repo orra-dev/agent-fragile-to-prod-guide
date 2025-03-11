@@ -1,7 +1,7 @@
 {
-  "name": "payment-service",
+  "name": "purchase-tool-service",
   "version": "1.0.0",
-  "description": "Payment processing service for the marketplace assistant",
+  "description": "Purchase processing previously a tool now a service for the marketplace assistant",
   "main": "index.js",
   "type": "module",
   "scripts": {

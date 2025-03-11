@@ -1,7 +1,7 @@
 {
-  "name": "inventory-service",
+  "name": "inventory-tool-service",
   "version": "1.0.0",
-  "description": "Inventory management service for the marketplace assistant",
+  "description": "Inventory management previously a tool now a service for the marketplace assistant",
   "main": "index.js",
   "type": "module",
   "scripts": {
