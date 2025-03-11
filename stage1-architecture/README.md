@@ -62,13 +62,13 @@ Other architectural benefits include,
     - Issues in one component don't necessarily impact others
     - Deterministic services have fewer failure modes than LLM-based agents
 
-## How Orra Helps
+## How orra Helps
 
-- **Automatic Orchestration**: Orra handles the coordination between components based on the user's intent
-- **Parallel Execution**: Where possible, Orra executes non-dependent tasks in parallel
-- **Service Discovery**: Components register with Orra, which then routes requests appropriately
-- **Seamless Integration**: Orra orchestrates between agents and services without code changes
-- **Type Validation**: Orra validates inputs and outputs for both agents and services
+- **Automatic Orchestration**: orra handles the coordination between components based on the user's intent
+- **Parallel Execution**: Where possible, orra executes non-dependent tasks in parallel
+- **Service Discovery**: Components register with orra, which then routes requests appropriately
+- **Seamless Integration**: orra orchestrates between agents and services without code changes
+- **Health Monitoring**: orra pauses orchestrations due to unhealthy services and resumes them when health is restored
 
 ## Next Steps
 
