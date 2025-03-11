@@ -1,0 +1,36 @@
+name: "marketplace-assistant"
+domain: "ecommerce"
+version: "1.0"
+
+use-cases:
+  - action: "Recommend products"
+    params:
+      query: "Second hand laptop under $1000 for coding"
+    capabilities:
+      - "Product recommendation based on needs"
+      - "Product finder based on user preferences"
+    intent: "Customer wants to find products matching specific criteria"
+
+  - action: "Purchase a product"
+    params:
+      productId: "laptop-1"
+      userId: "user-1"
+    capabilities:
+      - "Inventory availability check"
+      - "Inventory reserve product"
+      - "Estimate delivery date"
+      - "Purchase processing"
+    intent: "Customer wants to purchase a specific product"
+
+  - action: "Can I get it delivered soon?"
+    params:
+      productId: "laptop-1"
+      userId: "user-1"
+    capabilities:
+      - "Inventory availability check"
+      - "Delivery estimation"
+    intent: "Customer wants to know potential dates for delivery"
+
+constraints:
+  - "Verify product availability before processing purchase"
+  - "Provide delivery estimates based on inventory location"
