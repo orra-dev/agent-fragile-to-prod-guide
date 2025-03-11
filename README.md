@@ -1,6 +1,6 @@
-# Orra Workshop: From Fragile to Production-Ready AI Applications
+# orra Workshop: From Fragile to Production-Ready AI Applications
 
-This workshop demonstrates how to transform a fragile AI-powered Marketplace Assistant into a production-ready multi-agent application using Orra.
+This workshop demonstrates how to transform a fragile AI-powered Marketplace Assistant into a production-ready multi-agent application using orra.
 
 ## Workshop Overview
 
@@ -10,7 +10,7 @@ We'll build a marketplace assistant that helps users find, purchase, and arrange
 
 ### Stage 1: Multi-Agent Architecture
 - Build a distributed system with specialized agents and services
-- Integrate with Orra for orchestration
+- Integrate with orra for orchestration
 - Implement efficient communication between components
 - Add reliability out of the box with automatic retries
 - Balance LLM agents with dedicated services for optimal performance
@@ -21,14 +21,14 @@ We'll build a marketplace assistant that helps users find, purchase, and arrange
 - Implement automatic recovery mechanisms
 - Maintain data integrity through transactional workflows
 
-### Stage 3: Domain Grounding to Prevent Plan Hallucination
+### Stage 3: Domain Grounding to Prevent Plan Engine Hallucination
 - Define use cases with clear execution patterns
 - Map capabilities to actual services
 - Prevent hallucinated plans and invalid actions
 
 ## Workshop Components
 
-Each component demonstrates Orra's capabilities:
+Each component demonstrates orra's capabilities:
 
 - **Product Advisor Agent**: LLM-powered recommendation engine
 - **Inventory Service**: Simulated inventory database with holds and releases
@@ -74,7 +74,7 @@ Each stage builds upon the previous one and includes:
 - A dedicated folder with complete code
 - A detailed README explaining:
     - The problem being addressed
-    - The solution implemented with Orra
+    - The solution implemented with orra
     - Key benefits and improvements
     - Architecture diagrams and examples
 - Runnable code to demonstrate each concept
@@ -85,4 +85,4 @@ Each stage builds upon the previous one and includes:
 - Production-ready AI applications need reliable transaction handling
 - Domain grounding prevents hallucinated plans and actions
 - Observability is essential for system reliability
-- Orra provides a comprehensive platform for building robust AI applications
+- orra provides a comprehensive platform for building robust AI applications

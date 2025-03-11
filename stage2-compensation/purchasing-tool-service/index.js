@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 const port = process.env.PAYMENT_SERVICE_PORT || 3003;
 
-// Initialize the Orra service
+// Initialize the orra service
 const purchaseService = initService({
   name: 'purchase-service',
   orraUrl: process.env.ORRA_URL,
@@ -27,7 +27,7 @@ app.get('/health', (req, res) => {
 
 async function startService() {
   try {
-    // Register service with Orra
+    // Register service with orra
     await purchaseService.register({
       description: 'A service that makes marketplace product purchases on behalf of a user. It creates purchase orders that include shipping details, makes payments against external payment gateways and notifies users.',
       schema

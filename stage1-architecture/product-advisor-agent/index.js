@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 const port = process.env.PRODUCT_ADVISOR_PORT || 3001;
 
-// Initialize the Orra agent
+// Initialize the orra agent
 const productAdvisor = initAgent({
   name: 'product-advisor',
   orraUrl: process.env.ORRA_URL,
@@ -30,7 +30,7 @@ app.get('/health', (req, res) => {
 
 async function startService() {
   try {
-    // Register agent with Orra
+    // Register agent with orra
     await productAdvisor.register({
       description: 'An agent that helps users find products based on their needs and preferences.',
       schema

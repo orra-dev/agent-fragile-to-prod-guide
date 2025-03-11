@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 const port = process.env.INVENTORY_SERVICE_PORT || 3002;
 
-// Initialize the Orra service
+// Initialize the orra service
 const inventoryService = initService({
   name: 'inventory-service',
   orraUrl: process.env.ORRA_URL,
@@ -27,7 +27,7 @@ app.get('/health', (req, res) => {
 
 async function startService() {
   try {
-    // Register service with Orra
+    // Register service with orra
     await inventoryService.register({
       description: `A service that manages product inventory, checks availability and reserves products.
 Supported actions: checkAvailability (gets product status), reserveProduct (reduces inventory), and releaseProduct (returns inventory).`,

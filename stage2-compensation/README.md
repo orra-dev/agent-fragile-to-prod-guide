@@ -27,11 +27,11 @@ We've implemented compensation handlers for critical operations:
 4. **Better User Experience**: Clear communication when issues arise
 5. **Audit Trail**: Complete history of operations and compensations
 
-## How Orra Helps
+## How orra Helps
 
-- **Compensation Framework**: Orra provides built-in support for defining compensation handlers
+- **Compensation Framework**: orra provides built-in support for defining compensation handlers
 - **Automatic Triggering**: Compensation is automatically triggered when operations fail
-- **Orchestration**: Orra manages the complex flow of operations and compensations
+- **Orchestration**: orra manages the complex flow of operations and compensations
 
 ## Implementation Details
 
@@ -56,7 +56,7 @@ inventoryService.onRevert(async (task, result) => {
 1. **Begin Transaction**: orra starts tracking a transaction
 2. **Register Operations**: Each operation registers potential compensation
 3. **Execute Operations**: Normal flow proceeds
-4. **Handle Failures**: If an operation fails, Orra automatically:
+4. **Handle Failures**: If an operation fails, orra automatically:
     - Stops forward progress
     - Executes compensation handlers in reverse order
     - Records the compensation actions

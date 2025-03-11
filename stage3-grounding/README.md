@@ -69,7 +69,7 @@ constraints:
 4. **Clear Intent Mapping**: User requests map to verified execution patterns
 5. **Formal Validation**: PDDL validation ensures logical correctness of plans
 
-## How Orra Helps
+## How orra Helps
 
 - **Plan Engine**: Validates all execution plans against domain grounding
 - **Embedding-based Matching**: Intelligently maps user intents to grounded use cases
@@ -104,7 +104,7 @@ Consider this scenario:
 
 ## Running the Updated Application
 
-1. Make sure Orra is running
+1. Make sure orra is running
 2. Install dependencies for all components (same as previous stage)
 3. Start the components (same as previous stage)
 4. Start the client application

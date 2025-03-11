@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 const port = process.env.DELIVERY_AGENT_PORT || 3004;
 
-// Initialize the Orra agent
+// Initialize the orra agent
 const deliveryAgent = initAgent({
 	name: 'delivery-agent',
 	orraUrl: process.env.ORRA_URL,
@@ -28,7 +28,7 @@ app.get('/health', (req, res) => {
 
 async function startService() {
 	try {
-		// Register agent with Orra
+		// Register agent with orra
 		await deliveryAgent.register({
 			description: 'An agent that provides intelligent delivery estimates based on product, location, and current conditions.',
 			schema
