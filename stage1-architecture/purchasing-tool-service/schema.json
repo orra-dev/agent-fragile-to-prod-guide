@@ -8,22 +8,14 @@
 			"productId": {
 				"type": "string"
 			},
-			"deliveryEstimate": {
-				"type": "object",
-				"properties": {
-					"deliveryDate": {
-						"type": "string"
-					},
-					"estimatedDay": {
-						"type": "number"
-					}
-				}
+			"deliveryDate": {
+				"type": "string"
 			}
 		},
 		"required": [
 			"userId",
 			"productId",
-			"deliveryEstimate"
+			"deliveryDate"
 		]
 	},
 	"output": {
@@ -56,21 +48,10 @@
 					"createdAt": {
 						"type": "string"
 					},
-					"deliveryEstimate": {
-						"type": "object",
-						"properties": {
-							"deliveryDate": {
-								"type": "string"
-							},
-							"estimatedDay": {
-								"type": "number"
-							}
-						}
+					"deliveryDate": {
+						"type": "string"
 					}
 				}
-			},
-			"status": {
-				"type": "string"
 			},
 			"success": {
 				"type": "boolean"

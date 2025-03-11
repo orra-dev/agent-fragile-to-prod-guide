@@ -1,0 +1,57 @@
+{
+  "products": [
+    {
+      "id": "laptop-1",
+      "name": "Dell XPS 13 (2022)",
+      "description": "Used Dell XPS 13 laptop with 16GB RAM, 512GB SSD, Intel i7 processor",
+      "price": 750,
+      "condition": "excellent",
+      "category": "laptops",
+      "tags": ["programming", "college", "portable"],
+      "inStock": 1,
+      "warehouseAddress": "Unit 1 Cairnrobin Way, Portlethen, Aberdeen AB12 4NJ"
+    },
+    {
+      "id": "laptop-2",
+      "name": "MacBook Air M1",
+      "description": "Used MacBook Air with M1 chip, 8GB RAM, 256GB SSD",
+      "price": 650,
+      "condition": "good",
+      "category": "laptops",
+      "tags": ["college", "portable", "mac"],
+      "inStock": 2,
+			"warehouseAddress": "Unit 1 Cairnrobin Way, Portlethen, Aberdeen AB12 4NJ"
+    },
+    {
+      "id": "laptop-3",
+      "name": "Lenovo ThinkPad X1 Carbon",
+      "description": "Used ThinkPad X1 Carbon with 16GB RAM, 1TB SSD, Intel i7 processor",
+      "price": 820,
+      "condition": "excellent",
+      "category": "laptops",
+      "tags": ["business", "programming", "durable"],
+      "inStock": 0,
+			"warehouseAddress": "Unit 1 Cairnrobin Way, Portlethen, Aberdeen AB12 4NJ"
+    },
+    {
+      "id": "laptop-4",
+      "name": "Lenovo ThinkPad X1 Carbon",
+      "description": "Used ThinkPad X1 Carbon with 16GB RAM, 1TB SSD, Intel i7 processor",
+      "price": 500,
+      "condition": "fair",
+      "category": "laptops",
+      "tags": ["business", "programming", "durable"],
+      "inStock": 4,
+			"warehouseAddress": "Unit 1 Cairnrobin Way, Portlethen, Aberdeen AB12 4NJ"
+    }
+  ],
+  "orders": [],
+  "users": [
+    {
+      "id": "user-1",
+      "name": "John Doe",
+      "email": "john@example.com",
+      "address": "1a Goldsmiths Row, London E2 8QA"
+    }
+  ]
+}

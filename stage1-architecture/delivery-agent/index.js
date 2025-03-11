@@ -39,10 +39,10 @@ async function startService() {
 			console.log('Processing delivery estimation task:', task.id);
 			console.log('Input:', task.input);
 			
-			const { userId, productId } = task.input;
+			const { userId, productId, inStock } = task.input;
 			
 			// Use LLM to generate delivery estimates
-			const result = await generateDeliveryEstimates(userId, productId);
+			const result = await generateDeliveryEstimates(userId, productId, inStock);
 			// FEATURE COMING SOON:
 			// if (result.status !== 'success') {
 			//   return task.abort(result);
@@ -53,6 +53,7 @@ async function startService() {
 		console.log('Delivery Agent started successfully');
 	} catch (error) {
 		console.error('Failed to start Delivery Agent:', error);
+		process.exit(1);
 	}
 }
 

@@ -103,7 +103,11 @@ const trafficConditions = {
 };
 
 // Function to generate delivery estimates using LLM
-export async function generateDeliveryEstimates(userId, productId) {
+export async function generateDeliveryEstimates(userId, productId, inStock=0) {
+	if (inStock && inStock < 1) {
+		throw new Error('CannotEstimateDeliveryForOutOfStockProduct');
+	}
+	
 	const user = db.data. users.find(u => u.id === userId);
 	const product = db.data.products.find(p => p.id === productId);
 	
@@ -147,12 +151,12 @@ export async function generateDeliveryEstimates(userId, productId) {
 	{
 		"bestCase": {
 	    "estimatedDurationHours": "expected duration as decimal value, e.g. 7.5",
-	    "estimatedDeliveryDate": "estimated delivery date as a timestamp, e.g. 2024-10-02T21:15:00Z",
+	    "estimatedDeliveryDate": "estimated delivery date in the future as a timestamp, e.g. 2024-10-02T21:15:00Z",
 	    "confidenceLevel": "how confident you are. one of: low, moderate or high"
     },
     "worstCase": {
 	    "estimatedDurationHours": "expected duration as decimal value, e.g. 7.5",
-	    "estimatedDeliveryDate": "estimated delivery date as a timestamp, e.g. 2024-10-02T21:15:00Z",
+	    "estimatedDeliveryDate": "estimated delivery date in the future as a timestamp, e.g. 2024-10-02T21:15:00Z",
 	    "confidenceLevel": "how confident you are. one of: low, moderate or high"
     },
     "explanation": "Delivery estimate based on current traffic and weather conditions. Factors include road conditions, distance, and typical shipping times."
@@ -177,7 +181,7 @@ export async function generateDeliveryEstimates(userId, productId) {
 		
 		return {
 			status: supportedStatuses[2],
-			success: false,
+			success: true,
 			estimatedDays: hoursToDays(content?.worstCase?.estimatedDays || fallbackDeliveryEstimatedHours),
 			deliveryDate: content?.worstCase?.estimatedDeliveryDate?.split('T')[0] || fallbackDeliveryDate,
 			explanation: content?.explanation || fallbackExplanation,

@@ -2,7 +2,7 @@ import express from 'express';
 import { initAgent } from '@orra.dev/sdk';
 import dotenv from 'dotenv';
 import schema from './schema.json' assert { type: 'json' };
-import { marketplaceAssistant } from "./agent.js";
+import { recommendProduct } from "./agent.js";
 
 dotenv.config();
 
@@ -44,7 +44,7 @@ async function startService() {
       const { query } = task.input;
       
       // Use LLM to generate recommendations
-      return await marketplaceAssistant(query);
+      return await recommendProduct(query);
     });
     
     console.log('Product Advisor agent started successfully');

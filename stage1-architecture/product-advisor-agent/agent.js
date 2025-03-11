@@ -70,7 +70,12 @@ const availableFunctions = {
 	},
 };
 
-export async function marketplaceAssistant(query, conversationHistory = []) {
+export async function recommendProduct(query) {
+	const data = await runAdvisor(query);
+	return extractAndParseJson(data.response);
+}
+
+async function runAdvisor(query, conversationHistory = []) {
 	try {
 		// Add the user input to the conversation history
 		conversationHistory.push({ role: "user", content: query });
@@ -211,5 +216,23 @@ export async function marketplaceAssistant(query, conversationHistory = []) {
 	} catch (error) {
 		console.error("Error in marketplace assistant:", error);
 		throw error;
+	}
+}
+
+function extractAndParseJson(input) {
+	// Extract the JSON content
+	const jsonMatch = input.match(/```json\n([\s\S]*?)\n```/);
+	
+	if (!jsonMatch) {
+		throw new Error("No JSON content found between ```json``` tags");
+	}
+	
+	const jsonString = jsonMatch[1];
+	
+	// Parse the JSON
+	try {
+		return JSON.parse(jsonString);
+	} catch (error) {
+		throw new Error(`Failed to parse JSON: ${error.message}`);
 	}
 }

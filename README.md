@@ -12,6 +12,7 @@ We'll build a marketplace assistant that helps users find, purchase, and arrange
 - Build a distributed system with specialized agents and services
 - Integrate with Orra for orchestration
 - Implement efficient communication between components
+- Add reliability out of the box with automatic retries
 - Balance LLM agents with dedicated services for optimal performance
 
 ### Stage 2: Implementing Compensation for Reliable Transactions
@@ -23,7 +24,6 @@ We'll build a marketplace assistant that helps users find, purchase, and arrange
 ### Stage 3: Domain Grounding to Prevent Plan Hallucination
 - Define use cases with clear execution patterns
 - Map capabilities to actual services
-- Validate execution plans through PDDL
 - Prevent hallucinated plans and invalid actions
 
 ## Workshop Components

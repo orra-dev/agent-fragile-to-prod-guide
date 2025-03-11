@@ -12,6 +12,7 @@ export const supportedStatuses = [
 const db = await JSONFilePreset(path.join("..", "data.json"), { products: [] });
 
 export async function execInventory(action, productId) {
+	console.log('executing inventory action: ', action, ' for product: ', productId);
 	switch (action) {
 		case 'checkAvailability':
 			return checkAvailability(productId);

@@ -7,6 +7,9 @@
       },
       "productId": {
         "type": "string"
+      },
+      "inStock": {
+        "type": "number"
       }
     },
     "required": ["userId", "productId"]
@@ -14,22 +17,22 @@
   "output": {
     "type": "object",
     "properties": {
+      "status": {
+        "type": "string"
+      },
       "success": {
         "type": "boolean"
       },
-      "state": {
-        "type": "string"
-      },
-      "estimatedDurationHours": {
+      "estimatedDays": {
         "type": "number"
       },
-      "estimatedDeliveryDate": {
+      "deliveryDate": {
         "type": "string"
       },
       "explanation": {
         "type": "string"
       }
     },
-    "required": ["estimatedDurationHours", "estimatedDeliveryDate", "explanation"]
+    "required": ["estimatedDays", "deliveryDate", "explanation"]
   }
 }

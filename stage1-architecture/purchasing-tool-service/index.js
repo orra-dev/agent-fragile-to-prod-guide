@@ -38,10 +38,10 @@ async function startService() {
       console.log('Processing purchase task:', task.id);
       console.log('Input:', task.input);
       
-      const { productId, userId, deliveryEstimate } = task.input;
+      const { userId, productId, deliveryDate } = task.input;
       
       // Process the purchase order
-      const result = purchaseProduct(userId, productId, deliveryEstimate);
+      const result = purchaseProduct(userId, productId, deliveryDate);
       // FEATURE COMING SOON:
       // if (result.status !== 'success') {
       //   return task.abort(result);
