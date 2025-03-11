@@ -1,0 +1,65 @@
+{
+	"input": {
+		"type": "object",
+		"properties": {
+			"userId": {
+				"type": "string"
+			},
+			"productId": {
+				"type": "string"
+			},
+			"deliveryDate": {
+				"type": "string"
+			}
+		},
+		"required": [
+			"userId",
+			"productId",
+			"deliveryDate"
+		]
+	},
+	"output": {
+		"type": "object",
+		"properties": {
+			"order": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"userId": {
+						"type": "string"
+					},
+					"productId": {
+						"type": "string"
+					},
+					"productName": {
+						"type": "string"
+					},
+					"price": {
+						"type": "number"
+					},
+					"transactionId": {
+						"type": "string"
+					},
+					"status": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"deliveryDate": {
+						"type": "string"
+					}
+				}
+			},
+			"success": {
+				"type": "boolean"
+			}
+		},
+		"required": [
+			"order",
+			"success"
+		]
+	}
+}

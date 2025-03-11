@@ -1,0 +1,18 @@
+{
+  "name": "purchase-tool-service",
+  "version": "1.0.0",
+  "description": "Purchase processing previously a tool now a service for the marketplace assistant",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Team orra",
+  "license": "MIT",
+  "dependencies": {
+    "@orra.dev/sdk": "^0.2.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "lowdb": "^7.0.1"
+  }
+}

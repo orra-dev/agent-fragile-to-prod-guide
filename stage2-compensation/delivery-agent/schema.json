@@ -1,0 +1,38 @@
+{
+  "input": {
+    "type": "object",
+    "properties": {
+      "userId": {
+        "type": "string"
+      },
+      "productId": {
+        "type": "string"
+      },
+      "inStock": {
+        "type": "number"
+      }
+    },
+    "required": ["userId", "productId"]
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "status": {
+        "type": "string"
+      },
+      "success": {
+        "type": "boolean"
+      },
+      "estimatedDays": {
+        "type": "number"
+      },
+      "deliveryDate": {
+        "type": "string"
+      },
+      "explanation": {
+        "type": "string"
+      }
+    },
+    "required": ["estimatedDays", "deliveryDate", "explanation"]
+  }
+}
