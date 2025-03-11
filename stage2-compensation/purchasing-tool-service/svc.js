@@ -62,27 +62,8 @@ export async function purchaseProduct(userId, productId, deliveryDate) {
 }
 
 // Payment processing function
-function processPayment(userId, productId, amount) {
-	console.log(`Processing payment of $${amount} for product ${productId} by user ${userId}`);
-	
-	const failureChance = Math.random();
-	if (failureChance <= 0.5) {
-		console.log("Payment processing failed - Payment gateway is down!");
-		throw new Error('PaymentGatewayDown');
-	}
-	
-	// OTHER PAYMENT ERRORS:
-	// In a real application, payment processing requires calling a payment gateway which leads to an asynchronous flow.
-	// Typically, a webhook has to be setup to accept the final payment state.
-	// TO KEEP THIS WORKSHOP SIMPLE WE WILL NOT SHOWCASE HOW THESE ARE HANDLED.
-	// A FUTURE WORKSHOP WILL SHOWCASE HOW YOU CAN MAKE THIS WORK WITH ORRA.
-	
-	// Create transaction record
-	const transactionId = `trans-${Date.now()}-${userId.substring(0, 4)}-${productId.substring(0, 4)}`;
-	
-	console.log(`Payment successful! Transaction ID: ${transactionId}`);
-	
-	return transactionId;
+function processPayment() {
+	throw new Error('PaymentGatewayDown');
 }
 
 // Simulated notification
