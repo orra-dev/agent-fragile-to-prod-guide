@@ -24,8 +24,7 @@ We've implemented compensation handlers for critical operations:
 1. **Consistent State**: The system maintains data consistency even when operations fail
 2. **Automatic Recovery**: No manual intervention needed to fix data issues
 3. **Increased Reliability**: Users can trust that products won't disappear incorrectly
-4. **Better User Experience**: Clear communication when issues arise
-5. **Audit Trail**: Complete history of operations and compensations
+4. **Audit Trail**: Complete history of operations and compensations
 
 ## How orra Helps
 

@@ -1,4 +1,4 @@
-# Stage 3: Adding Domain Grounding to Prevent Plan Hallucination
+# Stage 3: Adding Domain Grounding for Reliable Plans
 
 In this stage, we address the challenge of LLM plan hallucinations by implementing domain grounding.
 

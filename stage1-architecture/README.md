@@ -44,12 +44,12 @@ These include out of the box **orra** features, like task retrying on error, and
 Other architectural benefits include,
 
 1. **Reduced Latency**:
-    - **orra** automatically parallelizes appropriate tasks
+    - **orra** automatically parallelises appropriate tasks
     - Overall response time improved by ~60% - esp. after caching execution plans
     - Services respond faster than LLM-based agents (40% improvement for deterministic operations)
 
 2. **Lower Token Usage**:
-    - Specialized agents reduce token consumption by ~40%
+    - Specialised agents reduce token consumption by ~40%
     - Converting tool to services reduces token usage by ~80% for inventory and purchasing operations
     - Significant cost savings in production
 
