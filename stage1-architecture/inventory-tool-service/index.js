@@ -33,23 +33,23 @@ async function startService() {
 Supported actions: checkAvailability (gets product status), reserveProduct (reduces inventory), and releaseProduct (returns inventory).`,
       schema
     });
-    
+
     // Start handling tasks
     inventoryService.start(async (task) => {
       console.log('Processing inventory task:', task.id);
       console.log('Input:', task.input);
-      
+
       const { action, productId } = task.input;
       const result = await execInventory(action, productId);
-      
+
       // FEATURE COMING SOON:
       // if (result.status !== 'success') {
       //   return task.abort(result);
       // }
-      
+
       return result;
     });
-    
+
     console.log('Inventory Service started successfully');
   } catch (error) {
     console.error('Failed to start Inventory Service:', error);

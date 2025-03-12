@@ -32,14 +32,14 @@ async function startService() {
       description: 'A service that makes marketplace product purchases on behalf of a user. It creates purchase orders that include shipping details, makes payments against external payment gateways and notifies users.',
       schema
     });
-    
+
     // Start handling tasks
     purchaseService.start(async (task) => {
       console.log('Processing purchase task:', task.id);
       console.log('Input:', task.input);
-      
+
       const { userId, productId, deliveryDate } = task.input;
-      
+
       // Process the purchase order
       const result = purchaseProduct(userId, productId, deliveryDate);
       // FEATURE COMING SOON:
@@ -48,7 +48,7 @@ async function startService() {
       // }
       return result;
     });
-    
+
     console.log('Payment Service started successfully');
   } catch (error) {
     console.error('Failed to start Payment Service:', error);

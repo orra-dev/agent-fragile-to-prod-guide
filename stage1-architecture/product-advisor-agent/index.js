@@ -35,18 +35,18 @@ async function startService() {
       description: 'An agent that helps users find products based on their needs and preferences.',
       schema
     });
-    
+
     // Start handling tasks
     productAdvisor.start(async (task) => {
       console.log('Processing product advisory task:', task.id);
       console.log('Input:', task.input);
-      
+
       const { query } = task.input;
-      
+
       // Use LLM to generate recommendations
       return await recommendProduct(query);
     });
-    
+
     console.log('Product Advisor agent started successfully');
   } catch (error) {
     console.error('Failed to start Product Advisor agent:', error);
