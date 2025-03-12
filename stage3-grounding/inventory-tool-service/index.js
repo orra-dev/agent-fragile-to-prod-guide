@@ -31,7 +31,20 @@ async function startService() {
     await inventoryService.register({
       description: `A service that manages product inventory, checks availability and reserves products.
 Supported actions: checkAvailability (gets product status), reserveProduct (reduces inventory), and releaseProduct (returns inventory).`,
-      schema
+      schema,
+      revertible: true
+    });
+    
+    inventoryService.onRevert(async (task, result) => {
+      // Only process compensations for reserveProduct actions
+      if (task.input.action === 'reserveProduct' && result.success) {
+        console.log('Reverting inventory product for task:', task.id);
+        console.log('Reverting inventory product hold for product:', result.productId);
+        
+        // Compensation logic: release the product that was reserved
+        const releaseResult = releaseProduct(result.productId, 1);
+        console.log('Inventory compensation completed:', JSON.stringify(releaseResult));
+      }
     });
     
     // Start handling tasks
