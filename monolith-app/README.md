@@ -1,6 +1,6 @@
 # Marketplace Assistant - Initial Monolithic Application
 
-This is the initial implementation of our AI-powered Marketplace Assistant. It's a monolithic application that handles all aspects of the shopping experience, from product recommendations to delivery estimation, payment processing, and notifications.
+This is the initial implementation of our AI-powered Marketplace Assistant. It's a monolithic application that handles all aspects of the shopping experience, from product recommendations to delivery estimation, purchase processing, and notifications.
 
 ## Architecture
 
@@ -8,7 +8,7 @@ The application is structured as a single monolithic agent that handles multiple
 - Understanding user requests
 - Product recommendations
 - Inventory management
-- Payment processing
+- Purchase processing
 - Delivery estimation
 - Customer notifications
 
@@ -19,6 +19,7 @@ graph TD
     User[User] --> |Request| App[Monolithic Assistant]
     App --> |Response| User
     App --> |Data| Database[(Database)]
+    App --> |Payments| PaymentGateway[Payment Gateway]
 ```
 
 ## Design Limitations
