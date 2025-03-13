@@ -31,7 +31,7 @@ This initial implementation has several limitations:
 3. **Reliability Issues**: A failure in any component impacts the entire application.
 4. **Debugging Complexity**: Difficult to isolate issues within the monolith.
 5. **Scalability Challenges**: The entire application needs to scale together.
-6. **No Compensation Handling**: When failures occur mid-transaction, the system can be left in an inconsistent state.
+6. **Managing State Across Failures**: When failures occur mid-transaction, the system can be left in an inconsistent state.
 
 ### Critical Bug: Inventory Inconsistency
 
