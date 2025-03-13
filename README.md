@@ -1,39 +1,36 @@
-# orra Workshop: From Fragile to Production-Ready AI Applications
+# From Fragile to Production-Ready Multi-Agent App
 
-This workshop demonstrates how to transform a fragile AI-powered Marketplace Assistant into a production-ready multi-agent application using orra.
+This guide demonstrates how to transform an AI-powered Marketplace Assistant into a production-ready multi-agent application using [orra](https://github.com/orra-dev/orra).
 
-## Workshop Overview
+## Overview
 
-We'll build a marketplace assistant that helps users find, purchase, and arrange delivery for products. Throughout the workshop, we'll progressively improve the application by addressing common production challenges in multi-agent AI systems.
+We'll explore how to build a marketplace assistant that helps users find and purchase products. This guide progressively improves the application by addressing common production challenges in multi-agent AI systems.
 
-## Workshop Progression: 3 Stages to Production Readiness
+## Guide Progression: 3 Stages to Production Readiness
 
 ### Stage 0: Monolith Agent
 - A marketplace agent found in [here](monolith-app)
 
 ### Stage 1: Multi-Agent Architecture
-- Build a distributed system with specialized agents and services
-- Integrate with orra for orchestration
-- Implement efficient communication between components
-- Add reliability out of the box with automatic retries
-- Balance LLM agents with dedicated services for optimal performance
+- Build a distributed system with specialized agents and tools as services
+- Integrate with orra for coordination, optimal performance, reduced costs and out of the box reliability 
+- Implement efficient communication between components with execution plans
 
 ### Stage 2: Implementing Compensation for Reliable Transactions
 - Add compensation handlers for critical operations
 - Ensure system consistency during failures
 - Implement automatic recovery mechanisms
-- Maintain data integrity through transactional workflows
 
-### Stage 3: Domain Grounding to Prevent Plan Engine Hallucination
-- Define use cases with clear execution patterns
-- Map capabilities to actual services
-- Prevent hallucinated plans and invalid actions
+### Stage 3: Domain Grounding for reliable Plan Engine planning
+- Ground all jobs and actions in your intended domain only
+- Define use cases with clear capability patterns
+- Prevent hallucinated plans and invalid actions - before plans are executed
 
-## Workshop Components
+## Guide Components
 
 Each component demonstrates orra's capabilities:
 
-- **Product Advisor Agent**: LLM-powered recommendation engine
+- **Product Advisor Agent**: LLM-powered product recommendation engine
 - **Inventory Service**: Simulated inventory database with holds and releases
 - **Delivery Agent**: Estimates delivery times based on various factors
 - **Purchasing Service**: A product purchasing that creates orders, makes payments with occasional failures and notifies users
@@ -42,8 +39,9 @@ Each component demonstrates orra's capabilities:
 
 1. Make sure you have Node.js installed (v18 or later)
 2. Clone this repository
-3. Follow the instructions in each stage's README.md file
-4. Run the provided scripts to see the improvements in action
+3. Follow the orra's [installation instructions](https://github.com/orra-dev/orra?tab=readme-ov-file#installation).
+4. Follow the instructions in each stage's README.md file
+5. Run the provided scripts to see the improvements in action
 
 ## Example User Interaction
 
@@ -66,12 +64,11 @@ User: "Yes, let's do it."
 System:
 - Orchestrates parallel execution:
   - Inventory Service places hold on laptop
-  - Payment Service processes payment
-  - Delivery Agent schedules delivery
-  - Notification Service sends confirmation
+  - Delivery Agent provides delivery estimate
+  - Purchasing service places order and notifies user
 ```
 
-## Workshop Structure
+## Guide Structure
 
 Each stage builds upon the previous one and includes:
 - A dedicated folder with complete code
