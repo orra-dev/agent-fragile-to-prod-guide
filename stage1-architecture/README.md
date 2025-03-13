@@ -12,7 +12,7 @@ We've transformed our application in two significant ways:
 
 ### 1. Split the Monolith into Specialized Components
 
-First, we divided the monolithic assistant into five specialized components:
+First, we divided the monolithic assistant into four specialized components:
 
 1. **Product Advisor Agent**: An LLM-powered agent that understands complex user needs and recommends products
 2. **Inventory Tool as Service**: Checks real-time product availability, and reserves/releases product stock
