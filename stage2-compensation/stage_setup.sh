@@ -33,7 +33,22 @@ fi
 
 echo "Extracted API key: $ORRA_API_KEY"
 
-# Step 5: Add the ORRA_API_KEY to all .env files
+# Step 5: Check for .env-example files and copy to .env if needed
+echo "Checking for .env-example files..."
+for dir in "$BASE_DIR"/*; do
+  if [ -d "$dir" ]; then
+    ENV_FILE="$dir/.env"
+    ENV_EXAMPLE_FILE="$dir/.env-example"
+
+    # If .env doesn't exist but .env-example does, copy it
+    if [ ! -f "$ENV_FILE" ] && [ -f "$ENV_EXAMPLE_FILE" ]; then
+      echo "Creating $ENV_FILE from $ENV_EXAMPLE_FILE"
+      cp "$ENV_EXAMPLE_FILE" "$ENV_FILE"
+    fi
+  fi
+done
+
+# Step 6: Add the ORRA_API_KEY to all .env files
 echo "Adding ORRA_API_KEY to .env files..."
 for dir in "$BASE_DIR"/*; do
   if [ -d "$dir" ]; then
@@ -56,7 +71,7 @@ for dir in "$BASE_DIR"/*; do
   fi
 done
 
-# Step 6: Create data.json file by copying from example
+# Step 7: Create data.json file by copying from example
 DATA_JSON_EXAMPLE="$BASE_DIR/data.json-example"
 DATA_JSON="$BASE_DIR/data.json"
 
