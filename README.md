@@ -11,7 +11,7 @@ This guide is a compliment to the [Wrangling Wild Agents](https://docs.google.co
 ## Guide Progression: 3 Stages to Production Readiness
 
 ### Stage 0: Monolith Agent
-- The original marketplace agent found in [here](monolith-app)
+- The original marketplace agent found in [here](monolithic-app)
 
 ### Stage 1: Architecture Re-think with orra
 - Build a distributed system with specialized agents and tools as services
