@@ -6,22 +6,24 @@ This guide demonstrates how to transform an AI-powered Marketplace Assistant int
 
 We'll explore how to build a marketplace assistant that helps users find and purchase products. This guide progressively improves the application by addressing common production challenges in multi-agent AI systems.
 
+This guide is a compliment to the [Wrangling Wild Agents](https://docs.google.com/presentation/d/1hTegIOTg4tuzU2EJck_dkWYUqw9VsthHtKBmNNJJ1vI/edit?usp=sharing) talk by the orra team, presented at the [AI in Production](https://home.mlops.community/public/events/ai-in-production-2025?agenda_day=6786673a7e4e28747d4d90ec&agenda_track=6786673a7e4e28747d4d9100&agenda_stage=67873ebf7e4e28747d4e8c27&agenda_filter_view=stage&agenda_view=list) 2025 conference. We'll be using various sections of that talk in this guide.
+
 ## Guide Progression: 3 Stages to Production Readiness
 
 ### Stage 0: Monolith Agent
-- A marketplace agent found in [here](monolith-app)
+- The original marketplace agent found in [here](monolith-app)
 
-### Stage 1: Multi-Agent Architecture
+### Stage 1: Architecture Re-think with orra
 - Build a distributed system with specialized agents and tools as services
 - Integrate with orra for coordination, optimal performance, reduced costs and out of the box reliability 
 - Implement efficient communication between components with execution plans
 
-### Stage 2: Implementing Compensation for Reliable Transactions
+### Stage 2: Reliable Consistency with orra
 - Add compensation handlers for critical operations
 - Ensure system consistency during failures
 - Implement automatic recovery mechanisms
 
-### Stage 3: Domain Grounding for reliable Plan Engine planning
+### Stage 3: Reliable Planning with orra
 - Ground all jobs and actions in your intended domain only
 - Define use cases with clear capability patterns
 - Prevent hallucinated plans and invalid actions - before plans are executed
@@ -84,5 +86,5 @@ Each stage builds upon the previous one and includes:
 - Multi-agent systems require careful orchestration
 - Production-ready AI applications need reliable transaction handling
 - Domain grounding prevents hallucinated plans and actions
-- Observability is essential for system reliability
+- An audit trail is essential for system reliability
 - orra provides a comprehensive platform for building robust AI applications
