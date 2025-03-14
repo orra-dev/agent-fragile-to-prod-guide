@@ -1,10 +1,13 @@
-# Marketplace Assistant - Initial Monolithic Application
+# Marketplace Assistant - Initial Monolith Application
 
 This is the initial implementation of our AI-powered Marketplace Assistant. It's a monolithic application that handles all aspects of the shopping experience, from product recommendations to delivery estimation, purchase processing, and notifications.
 
 ## Architecture
 
-The application is structured as a single monolithic agent that handles multiple responsibilities:
+This a classic Agent setup where an LLM uses tool calling to find info and execute tasks.
+
+There's a minor twist where we also call another Agent using a tool call (simulated for delivery estimates).
+
 - Understanding user requests
 - Product recommendations
 - Inventory management
@@ -12,15 +15,9 @@ The application is structured as a single monolithic agent that handles multiple
 - Delivery estimation
 - Customer notifications
 
-## Components
+_We can break this into a crew of agents, but we’d still be dealing with similar limitations for production!_
 
-```mermaid
-graph TD
-    User[User] --> |Request| App[Monolithic Assistant]
-    App --> |Response| User
-    App --> |Data| Database[(Database)]
-    App --> |Payments| PaymentGateway[Payment Gateway]
-```
+![](images/MonolithArchitecture.png)
 
 ## Design Limitations
 
@@ -31,18 +28,20 @@ This initial implementation has several limitations:
 3. **Reliability Issues**: A failure in any component impacts the entire application.
 4. **Debugging Complexity**: Difficult to isolate issues within the monolith.
 5. **Scalability Challenges**: The entire application needs to scale together.
-6. **Managing State Across Failures**: When failures occur mid-transaction, the system can be left in an inconsistent state.
+6. **Managing State Across failures is hard**: When failures occur mid-transaction, the system can be left in an inconsistent state.
 
 ### Critical Bug: Inventory Inconsistency
 
 The application has a critical issue that demonstrates the need for proper transaction handling:
 
 1. When a user attempts to purchase a product, the inventory is reduced BEFORE payment processing
-2. If the payment fails (simulated 50% of the time), the inventory remains reduced
+2. If the payment fails (simulated 50% of the time) because the Payment Gateway is down, the inventory remains reduced
 3. This creates a data inconsistency where products appear out of stock but were never actually purchased
 4. In a production system, this would require manual intervention to fix
 
-This bug was deliberately included to demonstrate why compensation handling is necessary in distributed systems, which we'll address in Stage 3 of the workshop.
+This bug was deliberately included to demonstrate why compensation handling is necessary in distributed systems, which we'll address in Stage 2 of the guide.
+
+**NOTE**: We've kept the failure quite simple here. Payments can also be rejected quite a bit later in the future - in that case more complicated recovery is required.
 
 ## Running the Application
 
@@ -65,4 +64,4 @@ npm start
 
 ## Next Steps
 
-In the next stage, we'll refactor this monolithic application into a multi-agent architecture using [orra](https://github.com/orra-dev/orra) to orchestrate the different specialized agents.
+In the next stage, we'll refactor this monolithic application into a multi-agent architecture using [orra](https://github.com/orra-dev/orra) to orchestrate different specialised components.
