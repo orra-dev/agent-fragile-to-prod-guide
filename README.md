@@ -92,3 +92,32 @@ Each stage builds upon the previous one and includes:
 - Domain grounding prevents hallucinated plans and actions
 - An audit trail is essential for system reliability
 - orra provides a comprehensive platform for building robust AI applications
+
+<br/>
+<a href="#" id="hn-button" class="hn-button">Discuss on Hacker News</a>
+
+<style>
+.hn-button {
+    display: inline-block;
+    background-color: #ff6600;
+    color: white;
+    font-family: sans-serif;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.hn-button:hover {
+    background-color: #e65c00;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var hnButton = document.getElementById('hn-button');
+    var currentUrl = encodeURIComponent(window.location.href);
+    var currentTitle = encodeURIComponent(document.title);
+    hnButton.href = "https://news.ycombinator.com/submitlink?u=" + currentUrl + "&t=" + currentTitle;
+});
+</script>
