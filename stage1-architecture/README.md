@@ -41,7 +41,7 @@ We kept the Product Advisor and Delivery as LLM-powered agents since they benefi
 
 This architectural shift is enabled by orra's Plan Engine, which operates at the application level rather than just the agent level. This higher-level orchestration allows direct coordination between services, eliminating the need to tunnel all interactions through LLM function-calling. The Plan Engine understands and coordinates the entire workflow across both LLM-powered agents and deterministic services.  
 
-## Getting Started
+## Run this stage
 
 ### Prerequisites
 - Node.js (v18+)
@@ -86,7 +86,7 @@ orra verify run 'Recommend a product' \
 ```
 [Follow these instructions](https://github.com/orra-dev/orra/blob/main/docs/cli.md#orchestration-actions) on how to inspect the orchestrated action.
 
-In this case, you should see just the `Product Advisor Agent` only executing and dealing with this action.   
+In this case, you should see just the `Product Advisor Agent` only executing and dealing with this action. Any interim errors are handled by orra.   
 
 2. **Enquire about delivery for the recommended product**
 
@@ -99,6 +99,7 @@ orra verify run 'Can I get it delivered by next week?' \
 In this case, there should be
 - an inventory check to ensure the product is in-stock
 - if yes, a delivery estimate is provided
+- Any interim errors are handled by orra
 
 3. **Purchase a recommended product**
 
@@ -113,6 +114,7 @@ In this case, there should be
 - an inventory reserve request if the product is in-stock - this lowers the stock count
 - A delivery estimate is provided
 - The product is purchased - causing an order to be placed
+- Any interim errors are handled by orra
 
 Navigate to the [data.json](data.json) file to view the placed `order` in the `orders` list.
 
