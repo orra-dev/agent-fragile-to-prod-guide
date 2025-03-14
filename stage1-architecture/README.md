@@ -162,4 +162,4 @@ Navigate to the [data.json](data.json) file to view the placed `order` in the `o
 
 ## Next Steps
 
-Our application is now more efficient, but it still lacks robust error handling. In the next stage, we'll implement compensation mechanisms to handle failures and ensure state/transaction integrity.
+Our application is now more efficient, but it still lacks robust error handling. In the [stage 2](../stage2-consistency), we'll implement compensation mechanisms to handle failures and ensure state/transaction integrity.

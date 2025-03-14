@@ -62,7 +62,7 @@ The assumption here is that there's a chat UI interface that forwards requests t
 
 We use lowdb to query and update data in our [data.json](data.json) file - basically a simple JSON based DB. This data is shared against all the components.
 
-3. **Purchase a recommended product**
+1. **Purchase a recommended product**
 
 ```bash
 orra verify run 'Purchase product' \
@@ -121,7 +121,7 @@ inventoryService.onRevert(async (task, result) => {
 });
 ```
 
-### Transaction Flow with Compensation
+### Handling Compensation
 
 1. **Begin Transaction**: orra starts tracking a transaction
 2. **Register Operations**: Each operation registers potential compensation
@@ -134,4 +134,4 @@ inventoryService.onRevert(async (task, result) => {
 
 ## Next Steps
 
-While our system is now more reliable with compensation handlers, it can still allow agents to perform operations outside our business domain constraints. In Stage 4, we'll implement domain guardrails to prevent hallucinations and enforce business rules.
+While our system is now more reliable with compensation handlers, it can still allow agents to perform operations outside our business domain constraints. In [Stage 3](../stage3-grounding), we'll implement domain guardrails to prevent hallucinations and enforce business rules.
