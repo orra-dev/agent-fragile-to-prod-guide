@@ -29,5 +29,5 @@ Thumbs.db
 # Data
 monolithic-app/data.json
 stage1-architecture/data.json
-stage2-compensation/data.json
+stage2-consistency/data.json
 stage3-grounding/data.json
