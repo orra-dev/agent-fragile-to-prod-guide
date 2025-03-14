@@ -94,30 +94,4 @@ Each stage builds upon the previous one and includes:
 - orra provides a comprehensive platform for building robust AI applications
 
 <br/>
-<a href="#" id="hn-button" class="hn-button">Discuss on Hacker News</a>
-
-<style>
-.hn-button {
-    display: inline-block;
-    background-color: #ff6600;
-    color: white;
-    font-family: sans-serif;
-    font-size: 14px;
-    padding: 8px 16px;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-.hn-button:hover {
-    background-color: #e65c00;
-}
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var hnButton = document.getElementById('hn-button');
-    var currentUrl = encodeURIComponent(window.location.href);
-    var currentTitle = encodeURIComponent(document.title);
-    hnButton.href = "https://news.ycombinator.com/submitlink?u=" + currentUrl + "&t=" + currentTitle;
-});
-</script>
+<a href="https://news.ycombinator.com/submitlink?u=[YOUR_URL]&t=[YOUR_TITLE]" style="display: inline-block; background-color: #EC4899; color: white; font-family: sans-serif; font-size: 14px; padding: 8px 16px; border-radius: 5px; text-decoration: none;">Discuss on Hacker News</a>
