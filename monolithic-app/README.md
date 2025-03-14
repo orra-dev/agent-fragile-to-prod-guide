@@ -60,7 +60,7 @@ cp data.json-example data.json
 npm start
 ```
 
-4. Interact with the assistant via the terminal interface.
+4. Interact with the assistant via the terminal interface, [using this interaction script](../README.md#example-user-interaction).
 
 ## Next Steps
 
