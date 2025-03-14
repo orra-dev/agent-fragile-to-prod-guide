@@ -27,7 +27,7 @@ yarn-error.log*
 Thumbs.db
 
 # Data
-monolith-app/data.json
+monolithic-app/data.json
 stage1-architecture/data.json
 stage2-compensation/data.json
 stage3-grounding/data.json

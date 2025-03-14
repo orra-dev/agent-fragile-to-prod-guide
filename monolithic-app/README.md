@@ -1,4 +1,4 @@
-# Marketplace Assistant - Initial Monolith Application
+# Marketplace Assistant - Initial Monolithic Application
 
 This is the initial implementation of our AI-powered Marketplace Assistant. It's a monolithic application that handles all aspects of the shopping experience, from product recommendations to delivery estimation, purchase processing, and notifications.
 
