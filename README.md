@@ -94,4 +94,4 @@ Each stage builds upon the previous one and includes:
 - orra provides a comprehensive platform for building robust AI applications
 
 <br/>
-<a href="https://news.ycombinator.com/submitlink?u=[YOUR_URL]&t=[YOUR_TITLE]" style="display: inline-block; background-color: #EC4899; color: white; font-family: sans-serif; font-size: 14px; padding: 8px 16px; border-radius: 5px; text-decoration: none;">Discuss on Hacker News</a>
+<a href="https://news.ycombinator.com/submitlink?u=https://github.com/orra-dev/agent-fragile-to-prod-guide&t=From%20Fragile%20to%20Production-Ready%20Multi-Agent%20App" style="display: inline-block; background-color: #EC4899; color: white; font-family: sans-serif; font-size: 14px; padding: 8px 16px; border-radius: 5px; text-decoration: none;">Discuss on Hacker News</a>
