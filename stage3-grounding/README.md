@@ -1,8 +1,8 @@
-# Stage 3: Adding Domain Grounding for Reliable Plans
+# Stage 3: Reliable Plans with orra
 
 In this stage, we address the challenge of LLM plan hallucinations by implementing domain grounding.
 
-## The Problem: Plan Engine Hallucinations
+## The Problem: Potential Plan Engine Hallucinations
 
 Even with reliable compensation mechanisms, LLM-powered plan engines can still:
 
@@ -20,7 +20,11 @@ We've implemented domain grounding for our marketplace assistant:
 2. **Semantic Verification**: The planning system ensures all actions align with real capabilities
 3. **PDDL Validation**: Execution plans are formally validated before execution
 
+![](images/ReliablePlans.png)
+
 ## Domain Grounding Definition
+
+See [assist-grounding.yaml](assist-grounding.yaml).
 
 ```yaml
 # Domain grounding definition
@@ -29,37 +33,112 @@ domain: "ecommerce"
 version: "1.0"
 
 use-cases:
-  - action: "Find products matching {criteria}"
-    params:
-      criteria: "laptop under $1000"
-    capabilities: 
-      - "Product search"
-      - "Product filtering"
-    intent: "Customer wants to find products matching specific criteria"
+   - action: "Recommend products"
+     params:
+        query: "Second hand laptop under $1000 for coding"
+     capabilities:
+        - "Product recommendation based on needs"
+        - "Product finder based on user preferences"
+     intent: "Customer wants to find products matching specific criteria"
 
-  - action: "Purchase product {productId}"
-    params:
-      productId: "laptop-1"
-      userId: "user-1"
-    capabilities:
-      - "Inventory verification"
-      - "Payment processing"
-      - "Delivery scheduling"
-    intent: "Customer wants to purchase a specific product"
+   - action: "Purchase a product"
+     params:
+        productId: "laptop-1"
+        userId: "user-1"
+     capabilities:
+        - "Inventory availability check"
+        - "Inventory reserve product"
+        - "Estimate delivery date"
+        - "Purchase processing"
+     intent: "Customer wants to purchase a specific product"
 
-  - action: "Check delivery status for {orderId}"
-    params:
-      orderId: "ORD123"
-    capabilities:
-      - "Order tracking"
-      - "Delivery estimation"
-    intent: "Customer wants to know when their order will arrive"
+   - action: "Can I get it delivered soon?"
+     params:
+        productId: "laptop-1"
+        userId: "user-1"
+     capabilities:
+        - "Inventory availability check"
+        - "Delivery estimation"
+     intent: "Customer wants to know potential dates for delivery"
 
 constraints:
-  - "Verify product availability before processing payment"
-  - "Confirm user intent before finalizing purchase"
-  - "Provide delivery estimates based on inventory location"
+   - "Verify product availability before processing purchase"
+   - "Provide delivery estimates based on inventory location"
 ```
+
+## Run this stage
+
+### Prerequisites
+- Node.js (v18+)
+- orra [Plan Engine running and CLI installed](https://github.com/orra-dev/orra/tree/main#installation)
+- [OpenAI API key](https://platform.openai.com/docs/api-reference/authentication)
+
+### Setup & Run
+
+1. **Initialize orra configuration**
+   ```bash
+   ./stage_setup.sh  # Sets up project, webhooks, and API keys
+
+2. **Configure OpenAI API key in each component's `.env` file**
+   ```shell
+   OPENAI_API_KEY=your_openai_api_key_here
+   ```
+3. **Start each component (in separate terminals)**
+   ```shell
+   cd [component-directory]  # Run for each component
+   npm install
+   npm start
+   ```
+4. **Start webhook simulator (in a separate terminal)**
+   ```bash
+   orra verify webhooks start http://localhost:3000/webhook
+   ```
+### Using the Application
+
+In this case we just want to demonstrate how grounding works.
+
+Again, we'll be using the [CLI](https://github.com/orra-dev/orra/blob/main/docs/cli.md)'s `orra verify` command to understand how the Plan Engine is coordinating our components to complete system actions.
+
+The assumption here is that there's a chat UI interface that forwards requests to the Plan Engine.
+
+1. **Apply the grounding**
+
+```bash
+orra grounding apply -f stage3-grounding/assist-grounding.yaml
+```
+
+2. **Ensure the domain is locked**
+
+```bash
+orra verify run 'Refund  product' \
+-d 'productId:laptop-1' \
+-d 'userId:user-1'
+```
+
+This should be rejected.
+
+3. **Purchase a recommended product - with grounding**
+
+```bash
+orra verify run 'Purchase product' \
+-d 'productId:laptop-1' \
+-d 'userId:user-1'
+```
+
+Now extra checks are enforced to stop Plan Hallucinations and impossible state transitions are guarded against.
+
+Invalid plans will NEVER run. 
+
+### Reset Environment
+
+1. **Clear Plan Engine configurations and reset data**
+```bash
+./stage_reset.sh  # Clears configurations and data
+```
+
+2. **Stop all the running components and kill all the terminal window**
+
+3. **Shutdown the Plan Engine**
 
 ## Benefits
 
@@ -92,7 +171,7 @@ constraints:
 
 4. **Execution or Rejection**:
     - Valid plans are executed
-    - Invalid plans are rejected with an explanation
+    - Invalid plans are rejected
 
 ## Hallucination Prevention Example
 
@@ -101,21 +180,6 @@ Consider this scenario:
 1. **User Request**: "I want to cancel my order and get a refund"
 2. **Without Grounding**: The plan engine might hallucinate a non-existent "refund-service" in the plan
 3. **With Grounding**: The plan is validated against known capabilities and rejected, with the system explaining, "I'm sorry, but our system doesn't currently support order cancellations and refunds"
-
-## Running the Updated Application
-
-1. Make sure orra is running
-2. Install dependencies for all components (same as previous stage)
-3. Start the components (same as previous stage)
-4. Start the client application
-
-## Demonstration
-
-The demonstration script shows:
-
-1. A normal purchase flow (plan validated and executed)
-2. An attempt at an action outside the grounded use cases (plan rejected)
-3. A request that matches the grounded use cases but with invalid parameters (validation failure)
 
 ## Done
 
