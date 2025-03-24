@@ -6,7 +6,7 @@ This guide demonstrates how to transform an AI-powered Marketplace Assistant int
 
 We'll explore how to build a marketplace assistant that helps users find and purchase products. This guide progressively improves the application by addressing common production challenges in multi-agent AI systems.
 
-This guide is a compliment to the [Wrangling Wild Agents](https://docs.google.com/presentation/d/1hTegIOTg4tuzU2EJck_dkWYUqw9VsthHtKBmNNJJ1vI/edit?usp=sharing) talk by the orra team, presented at the [AI in Production](https://home.mlops.community/public/events/ai-in-production-2025?agenda_day=6786673a7e4e28747d4d90ec&agenda_track=6786673a7e4e28747d4d9100&agenda_stage=67873ebf7e4e28747d4e8c27&agenda_filter_view=stage&agenda_view=list) 2025 conference. We'll be using various sections of that talk in this guide.
+This guide is a compliment to the [Wrangling Wild Agents](https://docs.google.com/presentation/d/1hTegIOTg4tuzU2EJck_dkWYUqw9VsthHtKBmNNJJ1vI/edit?usp=sharing) talk by the orra team, presented at the [AI in Production](https://home.mlops.community/home/videos/wrangling-wild-agents-ezo-saleh-and-aisha-yusaf-ai-in-production-2025-03-21) 2025 conference. We'll be using various sections of that talk in this guide.
 
 ## Guide Progression: 3 Stages to Production Readiness
 
